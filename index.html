@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Jenga</title>
+    <style>
+        body { margin: 0; overflow: hidden; font-family: sans-serif; background-color: #000; }
+        #overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            z-index: 10;
+        }
+        #overlay h1 { font-size: 3rem; margin-bottom: 1rem; }
+        #restart-btn {
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            background: #f0ad4e;
+            border: none;
+            border-radius: 5px;
+            color: black;
+            font-weight: bold;
+        }
+        #restart-btn:hover { background: #ec971f; }
+        #instructions {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            color: white;
+            background: rgba(0,0,0,0.5);
+            padding: 10px;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="instructions">
+        Click and drag to pull blocks.<br>
+        Use right click or Alt + Left click to rotate camera.<br>
+        Tower collapse = Game Over.
+    </div>
+    <div id="overlay">
+        <h1>TOWER COLLAPSED!</h1>
+        <button id="restart-btn">Restart Game</button>
+    </div>
+    <script type="module" src="/main.js"></script>
+</body>
+</html>
